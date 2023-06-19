@@ -1,7 +1,7 @@
 <?php
   session_start();
   if (!isset($_SESSION['id'])) {
-      header("Location:profile.php");
+      header("Location:Customerprofile.php");
   }
 ?>
 <!Doctype html>
