@@ -2,7 +2,7 @@
   session_start();
 
   if (isset($_SESSION['id'])) {
-      header("Location:profile.php");
+      header("Location:Customerprofile.php");
   }
 
   // Include database connectivity
@@ -24,7 +24,7 @@
             if (password_verify($password, $row['password'])) {
                 $_SESSION['id'] = $row['id'];
                 $_SESSION['fullname'] = $row['fullname'];
-                header("Location:profile.php");
+                header("Location:Customerprofile.php");
             }else{
                 $errorMsg = "Email or Password is invalid";
             }    
