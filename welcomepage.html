@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Welcome Page</title>
+  <style>
+    body {
+      background-image: url('your_background_image.jpg');
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .welcome-container {
+      text-align: center;
+    }
+
+    .welcome-container h1 {
+      font-size: 30px;
+      margin-bottom: 30px;
+    }
+
+    .welcome-container button {
+      font-size: 18px;
+      padding: 10px 20px;
+      margin: 10px;
+      background-color: green;
+      color: white;
+    }
+
+    .navigation {
+      margin-bottom: 20px;
+    }
+
+    .navigation ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .navigation li {
+      display: inline-block;
+      margin-right: 10px;
+    }
+
+    .navigation li a {
+      text-decoration: none;
+      color: white;
+      padding: 5px 10px;
+      border: 1px solid white;
+    }
+
+    .navigation li a:hover {
+      background-color: white;
+      color: green;
+    }
+  </style>
+</head>
+<body>
+  <div class="welcome-container">
+    <div class="navigation">
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contacts</a></li>
+      </ul>
+    </div>
+    <h1>Welcome to Excellence pharmacy!</h1>
+    <button onclick="location.href='loginform2.php'">Customer</button>
+    <button onclick="location.href='admin.php'">Admin </button>
+  </div>
+</body>
+</html>

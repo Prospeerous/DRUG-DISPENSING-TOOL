@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang ="en">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="style.css" />
+<title> Registration Form </title>
+</head>
+<body>
+    <nav id="navigation">
+        <a href="#"> Home </a>
+        <a href="#"> About </a>
+        <a href="#"> Services </a>
+        <a href="#"> Contact </a>
+    </nav>
+    <div id="Registrationform">
+
+    
+       
+<h1> Registration </h1>
+<form action="connect.php" method="post">
+  
+    <label for="fullname"> Full name: </label>
+    <input type="text" name="fullname" placeholder=" Enter your Fullname" required><br>
+    <label > Email: </label>
+    <input type="text" name="email" placeholder="Enter your email address" required><br>
+    <label > Phone Number: </label>
+    <input type="number"name="phone" placeholder="Enter your Phone number" required><br>
+   <label> Gender </label>
+   <select name="gender"> 
+    <option value=""> Select </option>
+    <option value="Female" > Female </option>
+ <option value="Male" > Male </option>
+ </select><br>
+ <label > Address: </label>
+ <textarea class="textarea" name="address" placeholder="Enter your address here"></textarea><br>
+
+    <label > Password: </label>
+    <input type="text" name="password" placeholder=" Input your desired password" required><br>
+    <label > Confirm Password: </label> 
+    <input type="text" name="conpass" placeholder=" Confirm your password" required> <br>
+    <input type="submit" >
+</form>
+
+
+</body>
+
+
+
+
+</html>
