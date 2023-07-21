@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            background-image: linear-gradient(45deg, rgba(255,255,255,0.4) 25%, transparent 25%, transparent 75%, rgba(255,255,255,0.4) 75%, rgba(255,255,255,0.4)), linear-gradient(45deg, rgba(255,255,255,0.4) 25%, transparent 25%, transparent 75%, rgba(255,255,255,0.4) 75%, rgba(255,255,255,0.4));
+            background-size: 40px 40px;
+            background-position: 0 0, 20px 20px;
+        }
+
+        h2 {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .form-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-input,
+        .form-textarea {
+            width: 300px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .form-textarea {
+            height: 100px;
+        }
+
+        input[type=submit]{
+            width: 150px;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .form-button:hover {
+            background-color: #45a049;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        .checkbox-label {
+            display: flex;
+            align-items: center;
+        }
+
+        .checkbox-label input {
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Please fill in the form below for diagnosis</h2>
+    <div class="form-container">
+        <form action="symptoms.php" method="post" id="diagnosisForm">
+            <label for="patientName"><b>Patient Name:</b></label>
+            <input type="text" class="form-input" name="patientName" id="patientName" placeholder="Enter Patient Name" required>
+
+            <label for="patientNumber"><b>Patient Number:</b></label>
+            <input type="text" class="form-input" name="patientNumber" id="patientNumber" placeholder="Enter Patient Number" required>
+
+            <label for="symptoms"><b>Please input the symptoms you have been having:</b></label>
+            <textarea class="form-textarea" name="symptoms" id="symptoms" placeholder="Enter Symptoms"></textarea>
+
+            <label for="duration"><b>Input duration of symptoms:</b></label>
+            <input type="text" class="form-input" name="duration" id="duration" placeholder="Enter Duration of Symptoms" required>
+            
+              <label for="previousMedication"><b>Previously on Medication:</b></label>
+            <input type="text" class="form-input" name="previousMedication" id="previousMedication" placeholder="Previously on Medication:" required>
+
+
+
+
+            <label for="allergies"><b>Do you have any allergies? If any, be sure to state them down:</b></label>
+            <textarea class="form-textarea" name="allergies" id="allergies" placeholder="Enter Allergies (if any)"></textarea>
+
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+</html>
