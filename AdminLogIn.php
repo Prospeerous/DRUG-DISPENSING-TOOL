@@ -1,52 +1,35 @@
 <?php
+require_once("connection.php");
 session_start();
-include "Database_class.php";
 
-function validate($data){
-    $data = trim($data);
-    $data = stripslashes($data);
-    $data = htmlspecialchars($data);
-    return $data;
-}
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Username and password sent from form
+    echo "Hi";
+    $Name = mysqli_real_escape_string($conn, $_POST['Name']);
+    $Password = mysqli_real_escape_string($conn, $_POST['Password']);
 
-if(isset($_POST['username']) && isset($_POST['email']) && isset($_POST['password'])){
-    $username = validate($_POST["username"]);
-    $email = validate($_POST["email"]);
-    $password = validate($_POST["password"]);
-
-    if(empty($username)) {
-        header("Location: Admin_Login.php?error=username is required");
-        exit();
-    }
-    else if(empty($email)) {
-        header("Location: Admin_Login.php?error=email is required");
-        exit();
-    }
-    else if(empty($password)) {
-        header("Location: Admin_Login.php?error=password is required");
-        exit();
-    }
-
-    $sql = "SELECT * FROM admin WHERE Username='$username' AND Email='$email' AND Password='$password'";
+    $sql = "SELECT SSN,Name,Password FROM admin WHERE Password = '$Password'";
     $result = mysqli_query($conn, $sql);
-
-    if(mysqli_num_rows($result) === 1){
-        $row = mysqli_fetch_assoc($result);
-        if($row['Username'] === $username && $row['Email'] === $email && $row['Password'] === $password){
-            echo 'Logged In!';
-            $_SESSION['username'] = $row['Username'];
-            $_SESSION['email'] = $row['Email'];
-            header("Location: Home.php");
-            exit();
-        }
-        else{
-            header("Location: Admin_Login.php?error=Incorrect username or password");
-            exit();
-        }
+    
+    $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
+    $count = mysqli_num_rows($result);
+    if ($count < 1)
+    {
+      echo "User not Found";
+      header("Location: Adminloginform.php");
+      exit;
     }
-    else{
-        header("Location: Admin_Login.php");
-        exit();
+    // If result matched $Name and $Password, table row must be 1 row
+    if ($count == 1) {
+        $_SESSION['Name'] = $Name;
+        $_SESSION['Password'] = $Password;
+        $_SESSION['SSN'] = $row['SSN'];
+
+        header("Location: AdminLanding.php");
+        exit;
+    } else {
+        $error = "Your Login Name or Password is invalid";
     }
 }
 ?>
+

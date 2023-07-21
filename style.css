@@ -1,8 +1,10 @@
 body {
     font-family: "Poppins", sans-serif;
-    color: #000000;
+    color: #ffffff;
     background-color: #ffffff;
+    
   }
+  
   
   .layout_padding {
     padding: 100px 0;
@@ -56,7 +58,7 @@ body {
   /*header section*/
   .hero_area {
     height: 100vh;
-    background-image: url(../images/hero-bg.jpeg);
+    background-image: url(../images1/hero-bg.jpeg);
   }
   
   .sub_page .hero_area {
@@ -127,7 +129,6 @@ body {
     padding: 10px 25px;
     color: #ffffff;
     text-align: center;
-    text-transform: uppercase;
     font-family: 'Roboto', sans-serif;
   }
   
@@ -504,6 +505,7 @@ body {
   }
   
   .health_section .box .img-box img {
+    
     width: 100%;
   }
   
